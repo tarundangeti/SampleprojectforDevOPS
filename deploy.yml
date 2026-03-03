@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: yogacont
-        image: tarundangeti/yogawebsiteimg
+        image: tarundangeti/internetbankingimg
 ---
 apiVersion: v1
 kind: Service
