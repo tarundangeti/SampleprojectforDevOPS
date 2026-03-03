@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: yoga
+  labels:
+    app: yoga
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: yoga
+  template:
+    metadata:
+      labels:
+        app: yoga
+    spec:
+      containers:
+      - name: yogacont
+        image: tarundangeti/yogawebsiteimg
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: yoga
+spec:
+  type: LoadBalancer
+  selector:
+    app: yoga
+  ports:
+    - port: 80
+      nodeport: 31433
